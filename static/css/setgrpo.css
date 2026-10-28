@@ -71,6 +71,10 @@ body {
 
 /* ---------- abstract / body text ---------- */
 
+.setgrpo-abstract {
+  font-weight: 600;
+}
+
 .setgrpo-abstract p {
   line-height: 1.75;
 }
