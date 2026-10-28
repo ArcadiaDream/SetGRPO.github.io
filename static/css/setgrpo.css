@@ -69,28 +69,6 @@ body {
   margin: 0 auto;
 }
 
-.setgrpo-result-table {
-  max-width: 62rem;
-  margin: 0 auto;
-}
-
-.setgrpo-result-table img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-.setgrpo-result-table img.setgrpo-table-second {
-  margin-top: 2rem;
-}
-
-.setgrpo-figure-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 /* ---------- abstract / body text ---------- */
 
 .setgrpo-abstract p {
@@ -99,19 +77,6 @@ body {
 
 .setgrpo-abstract p + p {
   margin-top: 0.9rem;
-}
-
-.setgrpo-subsection {
-  margin-top: 2.5rem;
-}
-
-.setgrpo-mono {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: 0.94em;
-  background: #f2f2fa;
-  border-radius: 4px;
-  padding: 0.05em 0.32em;
-  white-space: nowrap;
 }
 
 /* ---------- bibtex ---------- */
@@ -167,35 +132,24 @@ body {
   color: #8a8aa3;
 }
 
-/* ---------- figure placeholders ---------- */
+/* ---------- figure blocks ---------- */
 
 .setgrpo-figure-block {
   margin-top: 2.5rem;
 }
 
-.setgrpo-figure-row {
-  margin-top: 2.25rem;
-}
-
-.setgrpo-placeholder {
-  border: 2px dashed #d9d9e8;
-  border-radius: 12px;
-  background: #fbfbfe;
-  padding: 1.75rem 1.5rem;
-  color: #6b6b85;
-  text-align: center;
-}
-
-.setgrpo-placeholder p + p {
+.setgrpo-figures {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
   margin-top: 0.5rem;
 }
 
-.setgrpo-figure {
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.5rem;
+.setgrpo-figures img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
 
 .setgrpo-caption {

@@ -223,93 +223,19 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Experiments</h2>
 
-      <div class="columns is-centered">
-        <div class="column is-four-fifths content has-text-justified">
-          <p>
-            Evaluation covers <b>ten open-ended benchmarks</b> in three domains — Medical (HealthBench,
-            LLMEval-Med, MedQA, MedMCQA), Writing (WritingBench, Creative Writing v3), and Instruction Following
-            (IFEval, IFBench, InfoBench, MulDimIF) — on three backbones: <b>Qwen3.5-4B</b>, <b>Qwen3.5-9B</b>, and
-            <b>Llama 3.2-3B</b>. The untrained Base model is compared against three training baselines,
-            Rubric-based GRPO, RubricHub, and RuscaRL. SetGRPO attains the highest macro average on both Qwen
-            families.
-          </p>
-          <p>
-            A same-backbone comparison against RubricHub isolates the effect of the method: on <b>Qwen3-4B</b> SetGRPO
-            reaches a macro average of <b>57.56</b> (+1.50), and on <b>Qwen3-14B</b> it improves by <b>1.47</b>. After
-            calibrating the joint coefficient set and the execution threshold separately for each backbone, the gain
-            persists, which points at the treatment of score discrepancies rather than backbone-specific tuning.
-          </p>
-        </div>
-      </div>
-
-      <div class="setgrpo-result-table">
+      <div class="setgrpo-figures">
         <img src="static/images/table1-main-results.png"
-          alt="Table 1: main results on ten downstream benchmarks">
+          alt="Main results of SetGRPO on ten downstream benchmarks">
         <img src="static/images/table2-same-backbone.png"
-          alt="Table 2: same-backbone comparison between RubricHub and SetGRPO" class="setgrpo-table-second">
-      </div>
-
-      <h3 class="title is-4 has-text-centered setgrpo-subsection">Training dynamics</h3>
-      <div class="columns is-centered">
-        <div class="column is-four-fifths content has-text-justified">
-          <p>
-            Reward rises steadily and saturates, while policy entropy declines without an abrupt collapse. The
-            accepted-group ratio stays non-zero after screening, and the mean recovery ratio over accepted groups
-            holds around 76%–80%, so the retained updates keep contributing to optimization.
-          </p>
-        </div>
-      </div>
-
-      <div class="setgrpo-result-table">
-        <img src="static/images/fig3-training-dynamics.png" alt="Figure 3: training dynamics of SetGRPO">
-      </div>
-
-      <h3 class="title is-4 has-text-centered setgrpo-subsection">Risk calibration</h3>
-      <div class="columns is-centered">
-        <div class="column is-four-fifths content has-text-justified">
-          <p>
-            Empirical direction-reversal risk and its one-sided Clopper–Pearson upper bound both decrease as the
-            projection threshold tightens. At the selected threshold
-            <span class="setgrpo-mono">τ<sub>sel</sub> = 0.25</span> the upper bound stays below the target
-            <span class="setgrpo-mono">β = 0.08</span>.
-          </p>
-        </div>
-      </div>
-
-      <div class="columns is-centered has-text-centered setgrpo-figure-row">
-        <div class="column is-three-fifths">
-          <img src="static/images/fig4-risk-calibration.png" alt="Figure 4: risk calibration across candidate thresholds"
-            class="setgrpo-figure-img">
-        </div>
-      </div>
-
-      <h3 class="title is-4 has-text-centered setgrpo-subsection">Ablation</h3>
-      <div class="columns is-centered">
-        <div class="column is-four-fifths content has-text-justified">
-          <p>
-            Every variant trails the full setting on Qwen3.5-4B. A matched random discard, which keeps the same number
-            of groups, falls furthest behind — the gain comes from geometry-based screening rather than from issuing
-            fewer updates.
-          </p>
-        </div>
-      </div>
-
-      <div class="setgrpo-result-table">
-        <img src="static/images/table5-ablation.png" alt="Table 5: ablation study of SetGRPO on Qwen3.5-4B">
-      </div>
-
-      <h3 class="title is-4 has-text-centered setgrpo-subsection">Efficiency</h3>
-      <div class="columns is-centered">
-        <div class="column is-four-fifths content has-text-justified">
-          <p>
-            The additional cost is a Jacobian pass plus a per-group recovery search. Rollout and grader time are
-            unchanged, and the overhead buys a 4.75-point macro-average gain over GRPO at the same budget.
-          </p>
-        </div>
-      </div>
-
-      <div class="setgrpo-result-table">
-        <img src="static/images/table6-efficiency.png" alt="Table 6: efficiency comparison between GRPO and SetGRPO">
+          alt="Same-backbone comparison between RubricHub and SetGRPO">
+        <img src="static/images/fig3-training-dynamics.png"
+          alt="Training dynamics of SetGRPO">
+        <img src="static/images/fig4-risk-calibration.png"
+          alt="Risk calibration across candidate projection thresholds">
+        <img src="static/images/table5-ablation.png"
+          alt="Ablation study of SetGRPO on Qwen3.5-4B">
+        <img src="static/images/table6-efficiency.png"
+          alt="Efficiency comparison between GRPO and SetGRPO">
       </div>
     </div>
   </section>
