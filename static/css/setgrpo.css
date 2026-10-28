@@ -77,6 +77,14 @@ body {
   line-height: 1.6;
 }
 
+.setgrpo-tagline {
+  max-width: 46rem;
+  margin: 1rem auto 0;
+  color: #3a3a52;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
 .publication-authors .author-link {
   color: #3b5bdb;
   text-decoration: none;
