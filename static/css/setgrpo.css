@@ -214,6 +214,84 @@ body {
   white-space: nowrap;
 }
 
+/* ---------- more research dropdown ---------- */
+
+.setgrpo-research .navbar-link {
+  font-size: 0.95rem;
+  color: #3d3d5c;
+}
+
+.setgrpo-research .navbar-link::after {
+  border-color: #3d3d5c;
+}
+
+.research-dropdown {
+  width: 236px;
+  /* the full list shows on a normal screen; it only scrolls when the window is short */
+  max-height: calc(100vh - 76px);
+  top: calc(100% + 7px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.3rem 0 0.45rem;
+  border-radius: 10px;
+  border-top: 1px solid #ececf2;
+  box-shadow: 0 14px 32px rgba(20, 20, 44, 0.14);
+}
+
+/* the trigger's hover box ends 7px above the bar's edge; this keeps the
+   pointer path continuous so the menu does not close on the way down */
+.setgrpo-research::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 8px;
+}
+
+.research-dropdown .task-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #9292a8;
+  padding-top: 0.7rem;
+  padding-bottom: 0.3rem;
+  pointer-events: none;
+  cursor: default;
+}
+
+.research-dropdown a.navbar-item {
+  font-size: 0.92rem;
+  color: #3d3d5c;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.setgrpo-nav .research-dropdown a.navbar-item:hover,
+.setgrpo-nav .research-dropdown a.navbar-item:focus {
+  background: #f5f6fa;
+  color: #1c1c33;
+}
+
+.research-dropdown .navbar-divider {
+  margin: 0.4rem 0;
+  background-color: #ececf2;
+}
+
+.research-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.research-dropdown::-webkit-scrollbar-thumb {
+  background: #d6d6e2;
+  border-radius: 999px;
+}
+
+.research-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #b9b9c8;
+}
+
 /* ---------- responsive ---------- */
 
 @media screen and (max-width: 900px) {
@@ -232,6 +310,32 @@ body {
 @media screen and (max-width: 768px) {
   body {
     padding-top: 3rem;
+  }
+
+  /* the dropdown becomes a click-to-open panel under the bar; Bulma's mobile
+     styles would otherwise render it inline and stretch the fixed navbar */
+  .setgrpo-nav {
+    backdrop-filter: none;
+  }
+
+  .setgrpo-nav .research-dropdown {
+    display: none;
+  }
+
+  .setgrpo-nav .setgrpo-research.is-open .research-dropdown {
+    display: block;
+    position: fixed;
+    top: 3rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    width: auto;
+    max-height: 68vh;
+    border-radius: 0 0 12px 12px;
+    border-top: 1px solid #ececf2;
+  }
+
+  .setgrpo-nav .setgrpo-research.is-open .navbar-link::after {
+    transform: rotate(180deg);
   }
 
   .setgrpo-nav .container {
