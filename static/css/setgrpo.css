@@ -153,7 +153,17 @@ body {
 }
 
 .setgrpo-figure-item {
-  margin: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* tall or dense panels read better when they don't span the whole column */
+.setgrpo-figure-item--compact {
+  max-width: 840px;
+}
+
+.setgrpo-figure-item--narrow {
+  max-width: 640px;
 }
 
 .setgrpo-figure-item figcaption {
