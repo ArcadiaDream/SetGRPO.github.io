@@ -127,9 +127,9 @@ body {
 
 .setgrpo-zoom-hint {
   display: block;
-  margin-top: 0.35rem;
-  font-size: 0.86rem;
-  color: #8a8aa3;
+  margin-top: 0.25rem;
+  font-size: 0.8em;
+  color: #8a8a8a;
 }
 
 /* ---------- figure blocks ---------- */
@@ -166,26 +166,22 @@ body {
   max-width: 640px;
 }
 
+/* captions follow the COMBINER reference: Noto Sans 20px / 400 / 25px / #4a4a4a, centred */
+.setgrpo-caption,
 .setgrpo-figure-item figcaption {
-  margin-top: 0.7rem;
-  font-size: 0.94rem;
-  line-height: 1.65;
-  color: #5c5c78;
+  margin-top: 0.75rem;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #4a4a4a;
+  text-align: center;
 }
 
 .setgrpo-mono {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.94em;
-  background: #f2f2fa;
-  border-radius: 4px;
-  padding: 0.05em 0.32em;
   white-space: nowrap;
-}
-
-.setgrpo-caption {
-  font-size: 0.94rem;
-  color: #5c5c78;
-  margin-top: 0.75rem;
 }
 
 /* ---------- responsive ---------- */
