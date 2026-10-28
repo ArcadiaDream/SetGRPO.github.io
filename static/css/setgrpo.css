@@ -71,6 +71,23 @@ body {
   color: #6b6b85;
 }
 
+.setgrpo-affil {
+  margin-top: 0.5rem;
+  color: #4a4a63;
+  line-height: 1.6;
+}
+
+.publication-authors .author-link {
+  color: #3b5bdb;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.publication-authors .author-link:hover {
+  border-bottom-color: currentColor;
+}
+
 /* ---------- abstract / body text ---------- */
 
 .setgrpo-abstract p {
