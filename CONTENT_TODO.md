@@ -6,7 +6,9 @@
 
 - [x] `logo.png` — 页首 logo（900×270，取自论文封面标识）
 - [x] `intro-panel-a.png` / `intro-panel-b.png` — Figure 1 两个分面，由 `SetGRPO-copy/assets` 的 SVG 转出
-- [x] `framework.png` — Figure 2，三模块总览（缩至 2000 宽）
+- [x] `framework.png` — Figure 2 显示版（2000×614，取自 PDF 内嵌原图）
+- [x] `framework-full.png` — Figure 2 原始分辨率（7283×2237），点图在新窗口打开
+- [x] 图片卡片：白底圆角容器，窄屏（≤900px）内横向滚动而不是压缩图内文字
 - [x] `table1-main-results.png` / `table2-same-backbone.png` — 主结果与同底座对比
 - [x] `fig3-training-dynamics.png` / `fig4-risk-calibration.png` — 训练动态与风险校准
 - [x] `table5-ablation.png` / `table6-efficiency.png` — 消融与效率
