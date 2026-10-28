@@ -160,6 +160,27 @@ body {
   border-radius: 6px;
 }
 
+.setgrpo-figure-item {
+  margin: 0;
+}
+
+.setgrpo-figure-item figcaption {
+  max-width: 48rem;
+  margin-top: 0.7rem;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: #5c5c78;
+}
+
+.setgrpo-mono {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.94em;
+  background: #f2f2fa;
+  border-radius: 4px;
+  padding: 0.05em 0.32em;
+  white-space: nowrap;
+}
+
 .setgrpo-caption {
   font-size: 0.94rem;
   color: #5c5c78;

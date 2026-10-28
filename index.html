@@ -224,18 +224,58 @@
       <h2 class="title is-3 has-text-centered">Experiments</h2>
 
       <div class="setgrpo-figures">
-        <img src="static/images/table1-main-results.png"
-          alt="Main results of SetGRPO on ten downstream benchmarks">
-        <img src="static/images/table2-same-backbone.png"
-          alt="Same-backbone comparison between RubricHub and SetGRPO">
-        <img src="static/images/fig3-training-dynamics.png"
-          alt="Training dynamics of SetGRPO">
-        <img src="static/images/fig4-risk-calibration.png"
-          alt="Risk calibration across candidate projection thresholds">
-        <img src="static/images/table5-ablation.png"
-          alt="Ablation study of SetGRPO on Qwen3.5-4B">
-        <img src="static/images/table6-efficiency.png"
-          alt="Efficiency comparison between GRPO and SetGRPO">
+        <figure class="setgrpo-figure-item">
+          <img src="static/images/table1-main-results.png" width="2854" height="1066"
+            alt="Main results of SetGRPO on ten downstream benchmarks" loading="lazy">
+          <figcaption>
+            Main results on ten downstream benchmarks. Scores are averaged over repeated runs, with the absolute
+            gain over the corresponding Base model in parentheses.
+          </figcaption>
+        </figure>
+
+        <figure class="setgrpo-figure-item">
+          <img src="static/images/table2-same-backbone.png" width="2714" height="558"
+            alt="Same-backbone comparison between RubricHub and SetGRPO" loading="lazy">
+          <figcaption>
+            Same-backbone comparison with RubricHub on Qwen3-4B and Qwen3-14B, with RubricHub reproduced under its
+            public training procedure.
+          </figcaption>
+        </figure>
+
+        <figure class="setgrpo-figure-item">
+          <img src="static/images/fig3-training-dynamics.png" width="2839" height="626"
+            alt="Training dynamics of SetGRPO" loading="lazy">
+          <figcaption>
+            Training dynamics over the first 500 steps: reward from the first score, policy entropy,
+            accepted-group ratio, and mean recovery ratio.
+          </figcaption>
+        </figure>
+
+        <figure class="setgrpo-figure-item">
+          <img src="static/images/fig4-risk-calibration.png" width="1596" height="996"
+            alt="Risk calibration across candidate projection thresholds" loading="lazy">
+          <figcaption>
+            Risk calibration and retained updates across candidate thresholds; the selected threshold
+            <span class="setgrpo-mono">τ<sub>sel</sub> = 0.25</span> keeps the upper bound below
+            <span class="setgrpo-mono">β = 0.08</span>.
+          </figcaption>
+        </figure>
+
+        <figure class="setgrpo-figure-item">
+          <img src="static/images/table5-ablation.png" width="1877" height="888"
+            alt="Ablation study of SetGRPO on Qwen3.5-4B" loading="lazy">
+          <figcaption>
+            Ablation on Qwen3.5-4B, where Δ denotes the change from the full SetGRPO setting.
+          </figcaption>
+        </figure>
+
+        <figure class="setgrpo-figure-item">
+          <img src="static/images/table6-efficiency.png" width="1809" height="316"
+            alt="Efficiency comparison between GRPO and SetGRPO" loading="lazy">
+          <figcaption>
+            Efficiency comparison between GRPO and SetGRPO.
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
