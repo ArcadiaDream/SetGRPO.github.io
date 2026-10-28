@@ -285,26 +285,16 @@
         </div>
       </div>
 
-      <div class="setgrpo-placeholder">
-        <p class="has-text-weight-semibold">Table placeholder — main results</p>
-        <p>Per-benchmark numbers for Qwen3.5 and Llama3.2 go here
-          (<code>static/images/results-main.png</code>), or as a native HTML table if the numbers should stay
-          copyable.</p>
+      <div class="setgrpo-result-table">
+        <img src="static/images/results-main.png" alt="Main results on ten open-ended benchmarks">
+        <p class="setgrpo-caption">
+          Same-backbone comparison against RubricHub on Qwen3-4B and Qwen3-14B, across ten open-ended benchmarks
+          spanning medical, writing, and instruction-following tasks. Bold marks the better score within each
+          backbone and metric.
+        </p>
       </div>
 
       <h3 class="title is-4 has-text-centered setgrpo-subsection">Risk control and ablations</h3>
-      <div class="columns is-centered">
-        <div class="column is-four-fifths content has-text-justified">
-          <p>
-            At the selected threshold <span class="setgrpo-mono">τ<sub>sel</sub> = 0.25</span>, the one-sided
-            Clopper–Pearson upper bound on direction-reversal risk stays below the target
-            <span class="setgrpo-mono">β = 0.08</span>, with empirical conditional risk
-            <b>0.0548</b> on Qwen3-4B and <b>0.0554</b> on Qwen3-14B. Tightening the screening condition lowers both
-            the empirical risk and its confidence bound, while retained updates keep producing reward improvement
-            without marked entropy collapse.
-          </p>
-        </div>
-      </div>
 
       <div class="columns is-centered has-text-centered setgrpo-figure-row">
         <div class="column is-three-fifths">

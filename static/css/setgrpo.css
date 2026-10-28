@@ -85,6 +85,18 @@ body {
   line-height: 1.7;
 }
 
+.setgrpo-result-table {
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+.setgrpo-result-table img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
 .publication-authors .author-link {
   color: #3b5bdb;
   text-decoration: none;
