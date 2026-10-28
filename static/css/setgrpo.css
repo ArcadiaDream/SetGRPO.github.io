@@ -97,6 +97,10 @@ body {
   border-radius: 6px;
 }
 
+.setgrpo-result-table img.setgrpo-table-second {
+  margin-top: 2rem;
+}
+
 .publication-authors .author-link {
   color: #3b5bdb;
   text-decoration: none;
