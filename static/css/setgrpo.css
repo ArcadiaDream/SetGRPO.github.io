@@ -79,10 +79,40 @@ body {
 
 .setgrpo-tagline {
   max-width: 46rem;
-  margin: 1rem auto 0;
+  margin: 1.25rem auto 0;
   color: #3a3a52;
   font-size: 0.98rem;
   line-height: 1.7;
+}
+
+.setgrpo-logo {
+  display: block;
+  width: 100%;
+  max-width: 28rem;
+  height: auto;
+  margin: 0 auto 1.4rem;
+}
+
+.setgrpo-panel-row {
+  margin-bottom: 0.25rem;
+}
+
+.setgrpo-panel-row img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid #eef0f6;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.setgrpo-framework {
+  display: block;
+  width: 100%;
+  max-width: 62rem;
+  height: auto;
+  margin: 0 auto;
 }
 
 .setgrpo-result-table {

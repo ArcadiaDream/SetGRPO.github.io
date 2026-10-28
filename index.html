@@ -3,22 +3,20 @@
 
 <head>
   <meta charset="utf-8">
-  <!-- TODO(figures): replace figure placeholders once images are in static/images/ -->
-  <!-- TODO(affiliations): add author affiliations once confirmed -->
   <meta name="description"
     content="SetGRPO: Calibrating Grader-Induced Policy Optimization. A set-valued formulation of GRPO that calibrates grader-induced coefficient shifts, recovers safe updates under policy geometry, and gates them with finite-sample risk control.">
   <meta property="og:title" content="SetGRPO: Calibrating Grader-Induced Policy Optimization" />
   <meta property="og:description"
     content="Set-valued joint coefficient calibration, geometry-guided safe recovery, and selective risk-gated optimization for rubric-based GRPO training." />
   <meta property="og:url" content="https://arcadiadream.github.io/SetGRPO.github.io/" />
-  <meta property="og:image" content="static/images/social_preview.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content="https://arcadiadream.github.io/SetGRPO.github.io/static/images/logo.png" />
+  <meta property="og:image:width" content="900" />
+  <meta property="og:image:height" content="270" />
 
   <meta name="twitter:title" content="SetGRPO: Calibrating Grader-Induced Policy Optimization">
   <meta name="twitter:description"
     content="Set-valued joint coefficient calibration, geometry-guided safe recovery, and selective risk-gated optimization for rubric-based GRPO training.">
-  <meta name="twitter:image" content="static/images/social_preview.png">
+  <meta name="twitter:image" content="https://arcadiadream.github.io/SetGRPO.github.io/static/images/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="keywords"
     content="SetGRPO, GRPO, rubric-based reinforcement learning, LLM post-training, conformal prediction, selective risk control, policy optimization">
@@ -80,10 +78,11 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
 
+            <img class="setgrpo-logo" src="static/images/logo.png" alt="SetGRPO logo">
+
             <div class="setgrpo-venue">arXiv 2026</div>
             <h1 class="title is-1 publication-title">SetGRPO: Calibrating Grader-Induced Policy Optimization</h1>
 
-            <!-- TODO(affiliations): add <sup>n</sup> markers and an institution line once confirmed -->
             <div class="is-size-5 publication-authors">
               <span class="author-block"><a href="https://arcadiadream.github.io/HJL.github.io/" target="_blank"
                   class="author-link">Jiale Huang</a><sup>1</sup></span>,
@@ -108,11 +107,6 @@
               <span class="eql-cntrb"><small><sup>†</sup>Project Leader&nbsp;&nbsp;&nbsp;<sup>*</sup>Corresponding
                   Author</small></span>
             </div>
-
-            <p class="setgrpo-tagline">
-              <b>Official Implementation</b>: a set-valued framework for rubric-based GRPO that calibrates
-              grader-induced coefficient shifts into a joint uncertainty set with risk-controlled updates.
-            </p>
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -145,6 +139,11 @@
                 </span>
               </div>
             </div>
+
+            <p class="setgrpo-tagline">
+              <b>Official Implementation</b>: a set-valued framework for rubric-based GRPO that calibrates
+              grader-induced coefficient shifts into a joint uncertainty set with risk-controlled updates.
+            </p>
 
           </div>
         </div>
@@ -206,14 +205,17 @@
       </div>
 
       <div class="setgrpo-figure-block">
-        <!-- TODO(figures): replace with <img src="static/images/preliminary.png" alt="..."> -->
-        <div class="setgrpo-placeholder setgrpo-figure">
-          <p class="has-text-weight-semibold">Figure placeholder — <code>static/images/preliminary.png</code></p>
-          <p>(a) Score disagreement propagates jointly through within-group normalization.
-            (b) Policy geometry changes local update alignment.</p>
+        <div class="columns is-centered setgrpo-panel-row">
+          <div class="column is-half has-text-centered">
+            <img src="static/images/intro-panel-a.png" alt="Score disagreement propagates jointly through within-group normalization">
+          </div>
+          <div class="column is-half has-text-centered">
+            <img src="static/images/intro-panel-b.png" alt="Policy geometry changes local update alignment">
+          </div>
         </div>
         <p class="setgrpo-caption has-text-centered">
-          Figure 1. Illustration of score disagreement and its effect on local policy-update geometry.
+          Figure 1. (a) Score disagreement propagates jointly through within-group normalization.
+          (b) Policy geometry changes local update alignment.
         </p>
       </div>
     </div>
@@ -250,14 +252,10 @@
 
       <div class="setgrpo-figure-block">
         <h3 class="title is-4 has-text-centered">Framework</h3>
-        <!-- TODO(figures): replace with <img src="static/images/framework.png" alt="Overview of SetGRPO"> -->
-        <div class="setgrpo-placeholder setgrpo-figure">
-          <p class="has-text-weight-semibold">Figure placeholder — <code>static/images/framework.png</code></p>
-          <p>(a) Joint Reward Set Calibration, (b) Geometry-Guided Safe Recovery, (c) Selective Risk-Gated
-            Optimization.</p>
-        </div>
+        <img class="setgrpo-framework" src="static/images/framework.png" alt="Overview of SetGRPO">
         <p class="setgrpo-caption has-text-centered">
-          Figure 2. Overview of SetGRPO. <em>(caption to be refined against the paper)</em>
+          Figure 2. Overview of SetGRPO, which consists of (a) Joint Reward Set Calibration,
+          (b) Geometry-Guided Safe Recovery, and (c) Selective Risk-Gated Optimization.
         </p>
       </div>
     </div>
