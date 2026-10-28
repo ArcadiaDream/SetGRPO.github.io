@@ -65,7 +65,6 @@ body {
 .setgrpo-framework {
   display: block;
   width: 100%;
-  max-width: 62rem;
   height: auto;
   margin: 0 auto;
 }
@@ -124,39 +123,48 @@ body {
   word-break: break-word;
 }
 
-/* ---------- method cards ---------- */
+/* ---------- figure frame ---------- */
 
-.setgrpo-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin: 2rem 0 3rem;
+#framework {
+  display: block;
 }
 
-.setgrpo-card {
+#framework .container {
+  min-width: 0;
+}
+
+.setgrpo-figure-frame {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 2rem 0 0;
+  padding: 0;
   background: #ffffff;
-  border: 1px solid #e9e9f2;
+  border: 1px solid #e6e8f0;
   border-radius: 14px;
-  padding: 1.5rem 1.4rem;
-  box-shadow: 0 6px 18px rgba(24, 24, 48, 0.05);
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(20, 20, 44, 0.07);
 }
 
-.setgrpo-card-index {
-  display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: #8080aa;
+.setgrpo-figure-frame a {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.setgrpo-card h3 {
-  margin: 0.5rem 0 0.6rem;
+.setgrpo-figure-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.setgrpo-card p {
-  color: #4a4a63;
-  font-size: 0.97rem;
-  line-height: 1.6;
+.setgrpo-zoom-hint {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.86rem;
+  color: #8a8aa3;
 }
 
 /* ---------- figure placeholders ---------- */
@@ -199,8 +207,15 @@ body {
 /* ---------- responsive ---------- */
 
 @media screen and (max-width: 900px) {
-  .setgrpo-cards {
-    grid-template-columns: 1fr;
+  /* the figure scrolls sideways inside its card so the labels stay readable */
+  .setgrpo-figure-frame a {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .setgrpo-figure-frame img {
+    width: 860px;
+    max-width: none;
   }
 }
 

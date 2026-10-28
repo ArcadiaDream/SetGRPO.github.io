@@ -52,7 +52,7 @@
         <div class="navbar-start">
           <a class="navbar-item" href="#abstract">Abstract</a>
           <a class="navbar-item" href="#motivation">Motivation</a>
-          <a class="navbar-item" href="#method">Method</a>
+          <a class="navbar-item" href="#framework">Framework</a>
           <a class="navbar-item" href="#experiments">Experiments</a>
           <a class="navbar-item" href="#bibtex">BibTeX</a>
         </div>
@@ -196,43 +196,25 @@
     </div>
   </section>
 
-  <!-- Method -->
-  <section class="section hero is-light" id="method">
+  <!-- Framework -->
+  <section class="section hero is-light" id="framework">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Method</h2>
-      <p class="subtitle has-text-centered is-6">
-        SetGRPO keeps the original GRPO objective and adds three certified components.
+      <h2 class="title is-3 has-text-centered">Framework</h2>
+
+      <figure class="setgrpo-figure-frame">
+        <a href="static/images/framework-full.png" target="_blank" rel="noopener"
+          title="Open Figure 2 at full resolution">
+          <img class="setgrpo-framework" src="static/images/framework.png"
+            alt="Overview of SetGRPO: (a) joint reward set calibration, (b) geometry-guided safe recovery, (c) selective risk-gated optimization"
+            loading="lazy">
+        </a>
+      </figure>
+
+      <p class="setgrpo-caption has-text-centered">
+        Figure 2. Overview of SetGRPO, which consists of (a) Joint Reward Set Calibration,
+        (b) Geometry-Guided Safe Recovery, and (c) Selective Risk-Gated Optimization.
+        <span class="setgrpo-zoom-hint">Click the figure to open it at full resolution.</span>
       </p>
-
-      <div class="setgrpo-cards">
-        <div class="setgrpo-card">
-          <span class="setgrpo-card-index">01</span>
-          <h3 class="title is-5">Joint Reward Set Calibration</h3>
-          <p>Turns paired reward observations into a joint uncertainty set over the within-group training
-            coefficients, with a split-conformal radius that carries finite-sample marginal coverage.</p>
-        </div>
-        <div class="setgrpo-card">
-          <span class="setgrpo-card-index">02</span>
-          <h3 class="title is-5">Geometry-Guided Safe Recovery</h3>
-          <p>Maps candidate coefficients through the current policy's response-level gradients and returns the largest
-            recovery ratio that keeps the update aligned with the reference direction.</p>
-        </div>
-        <div class="setgrpo-card">
-          <span class="setgrpo-card-index">03</span>
-          <h3 class="title is-5">Selective Risk-Gated Optimization</h3>
-          <p>Picks one global threshold on an independent risk-calibration set, bounding the conditional
-            direction-reversal risk of the updates that survive the gate.</p>
-        </div>
-      </div>
-
-      <div class="setgrpo-figure-block">
-        <h3 class="title is-4 has-text-centered">Framework</h3>
-        <img class="setgrpo-framework" src="static/images/framework.png" alt="Overview of SetGRPO">
-        <p class="setgrpo-caption has-text-centered">
-          Figure 2. Overview of SetGRPO, which consists of (a) Joint Reward Set Calibration,
-          (b) Geometry-Guided Safe Recovery, and (c) Selective Risk-Gated Optimization.
-        </p>
-      </div>
     </div>
   </section>
 
