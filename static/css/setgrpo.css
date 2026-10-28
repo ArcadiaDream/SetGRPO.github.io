@@ -1,0 +1,216 @@
+/* SetGRPO project page — additions on top of the Academic Project Page Template */
+
+body {
+  padding-top: 3.25rem;
+}
+
+/* ---------- top navigation ---------- */
+
+.setgrpo-nav {
+  box-shadow: 0 1px 0 rgba(20, 20, 43, 0.07);
+  backdrop-filter: saturate(140%) blur(6px);
+}
+
+.setgrpo-nav .navbar-menu {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  box-shadow: none;
+}
+
+.setgrpo-nav .navbar-start {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.setgrpo-nav .navbar-end {
+  display: flex;
+}
+
+.setgrpo-nav .navbar-item {
+  font-size: 0.95rem;
+  color: #3d3d5c;
+}
+
+.setgrpo-nav .navbar-item:hover {
+  background: transparent;
+  color: #1c1c33;
+}
+
+/* ---------- hero ---------- */
+
+.setgrpo-hero {
+  background:
+    radial-gradient(1200px 400px at 50% -120px, rgba(120, 120, 255, 0.10), transparent 70%),
+    #ffffff;
+}
+
+.publication-title {
+  letter-spacing: -0.01em;
+}
+
+.publication-authors .author-block {
+  margin: 0 0.15rem;
+}
+
+.setgrpo-venue {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: #eef0ff;
+  color: #5656a8;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.setgrpo-footnotes {
+  margin-top: 0.35rem;
+  color: #6b6b85;
+}
+
+/* ---------- abstract / body text ---------- */
+
+.setgrpo-abstract p {
+  line-height: 1.75;
+}
+
+.setgrpo-abstract p + p {
+  margin-top: 0.9rem;
+}
+
+.setgrpo-subsection {
+  margin-top: 2.5rem;
+}
+
+.setgrpo-mono {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.94em;
+  background: #f2f2fa;
+  border-radius: 4px;
+  padding: 0.05em 0.32em;
+  white-space: nowrap;
+}
+
+/* ---------- bibtex ---------- */
+
+#bibtex pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ---------- method cards ---------- */
+
+.setgrpo-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0 3rem;
+}
+
+.setgrpo-card {
+  background: #ffffff;
+  border: 1px solid #e9e9f2;
+  border-radius: 14px;
+  padding: 1.5rem 1.4rem;
+  box-shadow: 0 6px 18px rgba(24, 24, 48, 0.05);
+}
+
+.setgrpo-card-index {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #8080aa;
+}
+
+.setgrpo-card h3 {
+  margin: 0.5rem 0 0.6rem;
+}
+
+.setgrpo-card p {
+  color: #4a4a63;
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+
+/* ---------- figure placeholders ---------- */
+
+.setgrpo-figure-block {
+  margin-top: 2.5rem;
+}
+
+.setgrpo-figure-row {
+  margin-top: 2.25rem;
+}
+
+.setgrpo-placeholder {
+  border: 2px dashed #d9d9e8;
+  border-radius: 12px;
+  background: #fbfbfe;
+  padding: 1.75rem 1.5rem;
+  color: #6b6b85;
+  text-align: center;
+}
+
+.setgrpo-placeholder p + p {
+  margin-top: 0.5rem;
+}
+
+.setgrpo-figure {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.setgrpo-caption {
+  font-size: 0.94rem;
+  color: #5c5c78;
+  margin-top: 0.75rem;
+}
+
+/* ---------- responsive ---------- */
+
+@media screen and (max-width: 900px) {
+  .setgrpo-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 3rem;
+  }
+
+  .setgrpo-nav .container {
+    min-width: 0;
+  }
+
+  .setgrpo-nav .navbar-menu {
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .setgrpo-nav .navbar-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .setgrpo-nav .navbar-start,
+  .setgrpo-nav .navbar-end {
+    min-width: 0;
+    flex: 0 0 auto;
+  }
+
+  .setgrpo-nav .navbar-item {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.6rem;
+    white-space: nowrap;
+  }
+}

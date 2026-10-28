@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!-- TODO(figures): replace figure placeholders once images are in static/images/ -->
+  <!-- TODO(affiliations): add author affiliations once confirmed -->
+  <meta name="description"
+    content="SetGRPO: Calibrating Grader-Induced Policy Optimization. A set-valued formulation of GRPO that calibrates grader-induced coefficient shifts, recovers safe updates under policy geometry, and gates them with finite-sample risk control.">
+  <meta property="og:title" content="SetGRPO: Calibrating Grader-Induced Policy Optimization" />
+  <meta property="og:description"
+    content="Set-valued joint coefficient calibration, geometry-guided safe recovery, and selective risk-gated optimization for rubric-based GRPO training." />
+  <meta property="og:url" content="https://arcadiadream.github.io/SetGRPO.github.io/" />
+  <meta property="og:image" content="static/images/social_preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="SetGRPO: Calibrating Grader-Induced Policy Optimization">
+  <meta name="twitter:description"
+    content="Set-valued joint coefficient calibration, geometry-guided safe recovery, and selective risk-gated optimization for rubric-based GRPO training.">
+  <meta name="twitter:image" content="static/images/social_preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords"
+    content="SetGRPO, GRPO, rubric-based reinforcement learning, LLM post-training, conformal prediction, selective risk control, policy optimization">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SetGRPO: Calibrating Grader-Induced Policy Optimization</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/setgrpo.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar is-white is-fixed-top setgrpo-nav" role="navigation" aria-label="main navigation">
+    <div class="container is-max-desktop">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="#top">SetGRPO</a>
+      </div>
+      <div class="navbar-menu is-active setgrpo-nav-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#abstract">Abstract</a>
+          <a class="navbar-item" href="#motivation">Motivation</a>
+          <a class="navbar-item" href="#method">Method</a>
+          <a class="navbar-item" href="#experiments">Experiments</a>
+          <a class="navbar-item" href="#bibtex">BibTeX</a>
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item" href="https://arxiv.org/abs/2610.36807" target="_blank">
+            <span class="icon"><i class="ai ai-arxiv"></i></span>
+            <span>arXiv</span>
+          </a>
+          <a class="navbar-item" href="https://github.com/ArcadiaDream/SetGRPO" target="_blank">
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>Code</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <a id="top"></a>
+
+  <section class="hero setgrpo-hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <div class="setgrpo-venue">arXiv 2026</div>
+            <h1 class="title is-1 publication-title">SetGRPO: Calibrating Grader-Induced Policy Optimization</h1>
+
+            <!-- TODO(affiliations): add <sup>n</sup> markers and an institution line once confirmed -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Jiale Huang</span>,
+              <span class="author-block">Zixu Li<sup>†</sup></span>,
+              <span class="author-block">Zhiwei Chen</span>,
+              <span class="author-block">Zhiheng Fu</span>,
+              <span class="author-block">Jinhe Bi</span>,
+              <span class="author-block">Yupeng Hu<sup>*</sup></span>
+            </div>
+
+            <div class="is-size-6 publication-authors setgrpo-footnotes">
+              <span class="eql-cntrb"><small><sup>†</sup>Project Leader&nbsp;&nbsp;&nbsp;<sup>*</sup>Corresponding
+                  Author</small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2610.36807" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2610.36807" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/ArcadiaDream/SetGRPO" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#bibtex" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-quote-right"></i></span>
+                    <span>BibTeX</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract -->
+  <section class="section hero is-light" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified setgrpo-abstract">
+            <p>
+              Rubric-based reinforcement learning uses fine-grained grader feedback to train large language models on
+              open-ended tasks, but grader randomness can alter GRPO updates in ways that score discrepancies alone
+              cannot characterize. Because GRPO jointly normalizes rewards within each response group and combines the
+              resulting training coefficients with response-level gradients, a scoring discrepancy can shift the
+              coefficients of the entire group and induce policy-dependent update changes. Selective execution further
+              affects the direction-reversal risk of retained updates.
+            </p>
+            <p>
+              To address this, we propose Set-Valued Group Relative Policy Optimization (SetGRPO). It comprises three
+              modules: (a) <b>Joint Reward Set Calibration</b> constructs a joint uncertainty set for the training
+              coefficients; (b) <b>Geometry-Guided Safe Recovery</b> maps candidate coefficients into the current
+              policy's local update geometry and determines the largest safe recovery ratio for each response group;
+              and (c) <b>Selective Risk-Gated Optimization</b> selects a global threshold through independent risk
+              calibration to control the conditional direction-reversal risk of accepted updates while preserving the
+              original GRPO objective.
+            </p>
+            <p>
+              Under exchangeability, SetGRPO provides finite-sample marginal coverage for the joint coefficient set and
+              simultaneous risk control across candidate thresholds. On ten open-ended benchmarks spanning three
+              domains, SetGRPO achieves the highest macro average among all compared training methods on both Qwen3.5
+              and Llama3.2 model families.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motivation -->
+  <section class="section" id="motivation">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Why Score Discrepancies Propagate</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths content has-text-justified">
+          <p>
+            GRPO derives each training coefficient from the shared mean and scale of its response group. A single
+            scoring discrepancy therefore shifts the coefficients of the whole group, and the resulting update depends
+            on the response-level gradients of the policy snapshot that happens to be in use. Scoring fixed response
+            groups twice with the same grader shows both effects: score disagreement spreads to multiple coefficients
+            through within-group normalization, and similar coefficient shifts can produce different update directions
+            under different policy geometries — which in turn changes which groups selective execution keeps.
+          </p>
+        </div>
+      </div>
+
+      <div class="setgrpo-figure-block">
+        <!-- TODO(figures): replace with <img src="static/images/preliminary.png" alt="..."> -->
+        <div class="setgrpo-placeholder setgrpo-figure">
+          <p class="has-text-weight-semibold">Figure placeholder — <code>static/images/preliminary.png</code></p>
+          <p>(a) Score disagreement propagates jointly through within-group normalization.
+            (b) Policy geometry changes local update alignment.</p>
+        </div>
+        <p class="setgrpo-caption has-text-centered">
+          Figure 1. Illustration of score disagreement and its effect on local policy-update geometry.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method -->
+  <section class="section hero is-light" id="method">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Method</h2>
+      <p class="subtitle has-text-centered is-6">
+        SetGRPO keeps the original GRPO objective and adds three certified components.
+      </p>
+
+      <div class="setgrpo-cards">
+        <div class="setgrpo-card">
+          <span class="setgrpo-card-index">01</span>
+          <h3 class="title is-5">Joint Reward Set Calibration</h3>
+          <p>Turns paired reward observations into a joint uncertainty set over the within-group training
+            coefficients, with a split-conformal radius that carries finite-sample marginal coverage.</p>
+        </div>
+        <div class="setgrpo-card">
+          <span class="setgrpo-card-index">02</span>
+          <h3 class="title is-5">Geometry-Guided Safe Recovery</h3>
+          <p>Maps candidate coefficients through the current policy's response-level gradients and returns the largest
+            recovery ratio that keeps the update aligned with the reference direction.</p>
+        </div>
+        <div class="setgrpo-card">
+          <span class="setgrpo-card-index">03</span>
+          <h3 class="title is-5">Selective Risk-Gated Optimization</h3>
+          <p>Picks one global threshold on an independent risk-calibration set, bounding the conditional
+            direction-reversal risk of the updates that survive the gate.</p>
+        </div>
+      </div>
+
+      <div class="setgrpo-figure-block">
+        <h3 class="title is-4 has-text-centered">Framework</h3>
+        <!-- TODO(figures): replace with <img src="static/images/framework.png" alt="Overview of SetGRPO"> -->
+        <div class="setgrpo-placeholder setgrpo-figure">
+          <p class="has-text-weight-semibold">Figure placeholder — <code>static/images/framework.png</code></p>
+          <p>(a) Joint Reward Set Calibration, (b) Geometry-Guided Safe Recovery, (c) Selective Risk-Gated
+            Optimization.</p>
+        </div>
+        <p class="setgrpo-caption has-text-centered">
+          Figure 2. Overview of SetGRPO. <em>(caption to be refined against the paper)</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiments -->
+  <section class="section" id="experiments">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Experiments</h2>
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths content has-text-justified">
+          <p>
+            Evaluation covers <b>ten open-ended benchmarks</b> in three domains — Medical (HealthBench,
+            LLMEval-Med, MedQA, MedMCQA), Writing (WritingBench, Creative Writing v3), and Instruction Following
+            (IFEval, IFBench, MulDimIF, InfoBench) — on the <b>Qwen3.5</b> and <b>Llama3.2</b> model families.
+            SetGRPO attains the highest macro average among all compared training methods on both families.
+          </p>
+          <p>
+            A same-backbone comparison against RubricHub isolates the effect of the method: on <b>Qwen3-4B</b> SetGRPO
+            reaches a macro average of <b>57.56</b> (+1.50), and on <b>Qwen3-14B</b> it improves by <b>1.47</b>. After
+            calibrating the joint coefficient set and the execution threshold separately for each backbone, the gain
+            persists, which points at the treatment of score discrepancies rather than backbone-specific tuning.
+          </p>
+        </div>
+      </div>
+
+      <div class="setgrpo-placeholder">
+        <p class="has-text-weight-semibold">Table placeholder — main results</p>
+        <p>Per-benchmark numbers for Qwen3.5 and Llama3.2 go here
+          (<code>static/images/results-main.png</code>), or as a native HTML table if the numbers should stay
+          copyable.</p>
+      </div>
+
+      <h3 class="title is-4 has-text-centered setgrpo-subsection">Risk control and ablations</h3>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths content has-text-justified">
+          <p>
+            At the selected threshold <span class="setgrpo-mono">τ<sub>sel</sub> = 0.25</span>, the one-sided
+            Clopper–Pearson upper bound on direction-reversal risk stays below the target
+            <span class="setgrpo-mono">β = 0.08</span>, with empirical conditional risk
+            <b>0.0548</b> on Qwen3-4B and <b>0.0554</b> on Qwen3-14B. Tightening the screening condition lowers both
+            the empirical risk and its confidence bound, while retained updates keep producing reward improvement
+            without marked entropy collapse.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered setgrpo-figure-row">
+        <div class="column is-three-fifths">
+          <!-- TODO(figures): replace with <img src="static/images/risk-calibration.png" alt="..."> -->
+          <div class="setgrpo-placeholder setgrpo-figure">
+            <p class="has-text-weight-semibold">Figure placeholder — risk calibration</p>
+            <p><code>static/images/risk-calibration.png</code></p>
+          </div>
+          <p class="setgrpo-caption">Direction-reversal risk across candidate thresholds with the selected
+            <span class="setgrpo-mono">τ<sub>sel</sub></span>.</p>
+        </div>
+        <div class="column is-three-fifths">
+          <!-- TODO(figures): replace with <img src="static/images/ablation.png" alt="..."> -->
+          <div class="setgrpo-placeholder setgrpo-figure">
+            <p class="has-text-weight-semibold">Figure placeholder — ablation</p>
+            <p><code>static/images/ablation.png</code></p>
+          </div>
+          <p class="setgrpo-caption">Ablation over the projection conditions and the recovery anchor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTeX -->
+  <section class="section hero is-light" id="bibtex">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">BibTeX</h2>
+      <pre><code>@misc{huang2026setgrpo,
+  title        = {SetGRPO: Calibrating Grader-Induced Policy Optimization},
+  author       = {Huang, Jiale and Li, Zixu and Chen, Zhiwei and Fu, Zhiheng
+                  and Bi, Jinhe and Hu, Yupeng},
+  year         = {2026},
+  eprint       = {2610.36807},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  url          = {https://arxiv.org/abs/2610.36807}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
+                Project Page Template</a>, adopted from the
+              <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page. The website is licensed
+              under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              Paper: <a href="https://arxiv.org/abs/2610.36807" target="_blank">arXiv:2610.36807</a> &nbsp;·&nbsp;
+              Code: <a href="https://github.com/ArcadiaDream/SetGRPO"
+                target="_blank">github.com/ArcadiaDream/SetGRPO</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
