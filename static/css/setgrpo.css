@@ -101,6 +101,12 @@ body {
   margin-top: 2rem;
 }
 
+.setgrpo-figure-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .publication-authors .author-link {
   color: #3b5bdb;
   text-decoration: none;

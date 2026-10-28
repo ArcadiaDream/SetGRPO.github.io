@@ -296,26 +296,67 @@
           alt="Table 2: same-backbone comparison between RubricHub and SetGRPO" class="setgrpo-table-second">
       </div>
 
-      <h3 class="title is-4 has-text-centered setgrpo-subsection">Risk control and ablations</h3>
+      <h3 class="title is-4 has-text-centered setgrpo-subsection">Training dynamics</h3>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths content has-text-justified">
+          <p>
+            Reward rises steadily and saturates, while policy entropy declines without an abrupt collapse. The
+            accepted-group ratio stays non-zero after screening, and the mean recovery ratio over accepted groups
+            holds around 76%–80%, so the retained updates keep contributing to optimization.
+          </p>
+        </div>
+      </div>
+
+      <div class="setgrpo-result-table">
+        <img src="static/images/fig3-training-dynamics.png" alt="Figure 3: training dynamics of SetGRPO">
+      </div>
+
+      <h3 class="title is-4 has-text-centered setgrpo-subsection">Risk calibration</h3>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths content has-text-justified">
+          <p>
+            Empirical direction-reversal risk and its one-sided Clopper–Pearson upper bound both decrease as the
+            projection threshold tightens. At the selected threshold
+            <span class="setgrpo-mono">τ<sub>sel</sub> = 0.25</span> the upper bound stays below the target
+            <span class="setgrpo-mono">β = 0.08</span>.
+          </p>
+        </div>
+      </div>
 
       <div class="columns is-centered has-text-centered setgrpo-figure-row">
         <div class="column is-three-fifths">
-          <!-- TODO(figures): replace with <img src="static/images/risk-calibration.png" alt="..."> -->
-          <div class="setgrpo-placeholder setgrpo-figure">
-            <p class="has-text-weight-semibold">Figure placeholder — risk calibration</p>
-            <p><code>static/images/risk-calibration.png</code></p>
-          </div>
-          <p class="setgrpo-caption">Direction-reversal risk across candidate thresholds with the selected
-            <span class="setgrpo-mono">τ<sub>sel</sub></span>.</p>
+          <img src="static/images/fig4-risk-calibration.png" alt="Figure 4: risk calibration across candidate thresholds"
+            class="setgrpo-figure-img">
         </div>
-        <div class="column is-three-fifths">
-          <!-- TODO(figures): replace with <img src="static/images/ablation.png" alt="..."> -->
-          <div class="setgrpo-placeholder setgrpo-figure">
-            <p class="has-text-weight-semibold">Figure placeholder — ablation</p>
-            <p><code>static/images/ablation.png</code></p>
-          </div>
-          <p class="setgrpo-caption">Ablation over the projection conditions and the recovery anchor.</p>
+      </div>
+
+      <h3 class="title is-4 has-text-centered setgrpo-subsection">Ablation</h3>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths content has-text-justified">
+          <p>
+            Every variant trails the full setting on Qwen3.5-4B. A matched random discard, which keeps the same number
+            of groups, falls furthest behind — the gain comes from geometry-based screening rather than from issuing
+            fewer updates.
+          </p>
         </div>
+      </div>
+
+      <div class="setgrpo-result-table">
+        <img src="static/images/table5-ablation.png" alt="Table 5: ablation study of SetGRPO on Qwen3.5-4B">
+      </div>
+
+      <h3 class="title is-4 has-text-centered setgrpo-subsection">Efficiency</h3>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths content has-text-justified">
+          <p>
+            The additional cost is a Jacobian pass plus a per-group recovery search. Rollout and grader time are
+            unchanged, and the overhead buys a 4.75-point macro-average gain over GRPO at the same budget.
+          </p>
+        </div>
+      </div>
+
+      <div class="setgrpo-result-table">
+        <img src="static/images/table6-efficiency.png" alt="Table 6: efficiency comparison between GRPO and SetGRPO">
       </div>
     </div>
   </section>
