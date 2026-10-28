@@ -39,45 +39,17 @@ body {
 
 /* ---------- hero ---------- */
 
-.setgrpo-hero {
-  background:
-    radial-gradient(1200px 400px at 50% -120px, rgba(120, 120, 255, 0.10), transparent 70%),
-    #ffffff;
-}
-
 .publication-title {
   letter-spacing: -0.01em;
 }
 
-.publication-authors .author-block {
-  margin: 0 0.15rem;
+.publication-authors a.author-link {
+  color: hsl(204, 86%, 53%);
+  text-decoration: none;
 }
 
-.setgrpo-footnotes {
-  margin-top: 0.35rem;
-  color: #6b6b85;
-}
-
-.setgrpo-affil {
-  margin-top: 0.5rem;
-  color: #4a4a63;
-  line-height: 1.6;
-}
-
-.setgrpo-tagline {
-  max-width: 46rem;
-  margin: 1.25rem auto 0;
-  color: #3a3a52;
-  font-size: 0.98rem;
-  line-height: 1.7;
-}
-
-.setgrpo-logo {
-  display: block;
-  width: 100%;
-  max-width: 28rem;
-  height: auto;
-  margin: 0 auto 1.4rem;
+.publication-authors a.author-link:hover {
+  text-decoration: underline;
 }
 
 .setgrpo-panel-row {
@@ -122,17 +94,6 @@ body {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.publication-authors .author-link {
-  color: #3b5bdb;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.15s ease;
-}
-
-.publication-authors .author-link:hover {
-  border-bottom-color: currentColor;
 }
 
 /* ---------- abstract / body text ---------- */
