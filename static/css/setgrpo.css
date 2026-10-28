@@ -53,19 +53,6 @@ body {
   margin: 0 0.15rem;
 }
 
-.setgrpo-venue {
-  display: inline-block;
-  margin-bottom: 0.9rem;
-  padding: 0.2rem 0.7rem;
-  border-radius: 999px;
-  background: #eef0ff;
-  color: #5656a8;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .setgrpo-footnotes {
   margin-top: 0.35rem;
   color: #6b6b85;
