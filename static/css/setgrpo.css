@@ -99,26 +99,6 @@ body {
   padding: 2.5rem 1.5rem 3rem;
 }
 
-.setgrpo-visitors {
-  margin: 0 auto;
-  max-width: 201px;
-}
-
-.setgrpo-visitors img {
-  display: block;
-  width: 100%;
-  max-width: 201px;
-  height: auto;
-  margin: 0 auto 0.6rem;
-  border-radius: 6px;
-}
-
-.setgrpo-visitors figcaption {
-  font-size: 0.76rem;
-  line-height: 1.4;
-  color: #8a8a8a;
-}
-
 /* ---------- figure frame ---------- */
 
 #framework {
