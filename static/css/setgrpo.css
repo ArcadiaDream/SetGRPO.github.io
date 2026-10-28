@@ -125,14 +125,6 @@ body {
   height: auto;
 }
 
-/* Figure 2 is a dark panel: the frame must continue its background,
-   otherwise the artwork sits inside a white halo. */
-.setgrpo-figure-frame--dark {
-  background: #000000;
-  border-color: #1e1e2a;
-  box-shadow: 0 14px 34px rgba(8, 8, 20, 0.28);
-}
-
 .setgrpo-zoom-hint {
   display: block;
   margin-top: 0.35rem;
