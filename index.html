@@ -23,7 +23,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>SetGRPO: Calibrating Grader-Induced Policy Optimization</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico?v=20261029">
+  <link rel="icon" type="image/png" sizes="192x192" href="static/images/favicon-192.png?v=20261029">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-touch-icon.png?v=20261029">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -126,8 +128,8 @@
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>School of Software, Shandong University,<br><sup>2</sup>National
-                University of Singapore</span>
+              <span class="author-block"><sup>1</sup>Shandong University,<br><sup>2</sup>National University of
+                Singapore</span>
               <span class="eql-cntrb"><small><br><sup>†</sup>Project leader.&nbsp;&nbsp;&nbsp;<sup>✉</sup>Corresponding
                   author.</small></span>
             </div>
@@ -232,8 +234,8 @@
           </div>
         </div>
         <p class="setgrpo-caption has-text-centered">
-          Figure 1. (a) Score disagreement propagates jointly through within-group normalization.
-          (b) Policy geometry changes local update alignment.
+          Figure 1. Illustration of score disagreement and its effect on local policy-update geometry.
+          (a) Score disagreement propagates jointly. (b) Policy geometry changes local update alignment.
         </p>
       </div>
     </div>
@@ -254,8 +256,11 @@
       </figure>
 
       <p class="setgrpo-caption has-text-centered">
-        Figure 2. Overview of SetGRPO, which consists of (a) Joint Reward Set Calibration,
-        (b) Geometry-Guided Safe Recovery, and (c) Selective Risk-Gated Optimization.
+        Figure 2. Overview of SetGRPO. (a) Joint reward-set calibration uses two grader scores on the same response
+        group to construct a joint coefficient uncertainty set. (b) Geometry-guided safe recovery maps candidate
+        coefficients through the current policy geometry and identifies the largest direction-preserving recovery
+        ratio. (c) Selective risk-gated optimization selects a global threshold and applies the recovered coefficients
+        only to updates satisfying the calibrated conditional-risk constraint.
         <span class="setgrpo-zoom-hint">Click the figure to open it at full resolution.</span>
       </p>
     </div>
