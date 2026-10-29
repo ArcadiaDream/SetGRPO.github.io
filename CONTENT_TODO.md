@@ -16,12 +16,16 @@
 - [x] `og:image` / `twitter:image` 指向 `logo.png`（此前引用的 `social_preview.png` 不存在）
 - [x] 导航栏 More Research 下拉，14 篇同组论文，桌面悬停 / 移动端点击展开
 - [x] 页脚访客地图已移除（免注册计数服务均不可用）
+- [x] `favicon.ico` — 取自 logo 的图形标记，四档尺寸（16/32/48/64）+ `favicon-192.png` + `apple-touch-icon.png`
+- [x] 根目录 `LICENSE` — CC BY-SA 4.0 全文，与页脚声明一致
+- [x] 内容核对：单位、Figure 1/2 图注已按 arXiv:2610.36807 原文修正
 
 ## 2. 待确认
 
 - [ ] 若论文中稿，把 H1 前缀 `[arXiv'26]` 改成会议名，并同步顶部 meta 与 `og:title`
-- [ ] `favicon.ico` 仍是模板自带图标（16×16），可换成 logo 的方形版本
 - [ ] 主结果表目前是论文截图；如需可复制数字，再换原生 HTML 表格
+- [ ] 实验区只放了 Table 1 / 2 / 5 / 6，编号跳过 Table 3（训练配置）与 Table 4（覆盖率与风险记录），读者可能疑惑
+- [ ] Figure 只放了 1–4，论文另有 Figure 5–10 及附录图，是否需要补 1–2 张（如 Figure 10 的 policy drift 验证）
 
 ## 3. 发布相关
 
