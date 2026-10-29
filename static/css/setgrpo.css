@@ -1,7 +1,14 @@
 /* SetGRPO project page — additions on top of the Academic Project Page Template */
 
+/* the bar scrolls with the page, so its height never hides the content below */
 body {
-  padding-top: 3.25rem;
+  padding-top: 0;
+}
+
+/* anchor jumps would otherwise land under the sticky bar */
+section[id],
+a[id="top"] {
+  scroll-margin-top: 4.5rem;
 }
 
 /* ---------- top navigation ---------- */
@@ -9,6 +16,13 @@ body {
 .setgrpo-nav {
   box-shadow: 0 1px 0 rgba(20, 20, 43, 0.07);
   backdrop-filter: saturate(140%) blur(6px);
+}
+
+/* Bulma fixes this bar to the viewport; sticky keeps the same look while the
+   page still flows underneath it */
+.setgrpo-nav.is-fixed-top {
+  position: sticky;
+  top: 0;
 }
 
 .setgrpo-nav .navbar-menu {
@@ -46,6 +60,13 @@ body {
 
 .publication-authors a.author-link:hover {
   text-decoration: underline;
+}
+
+/* link-button icons are inline SVG, so they inherit colour and size directly */
+.publication-links .icon svg {
+  display: block;
+  height: 1em;
+  width: auto;
 }
 
 .setgrpo-panel-row {
@@ -287,55 +308,69 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    padding-top: 3rem;
-  }
-
-  /* the dropdown becomes a click-to-open panel under the bar; Bulma's mobile
-     styles would otherwise render it inline and stretch the fixed navbar */
+@media screen and (max-width: 1023px) {
   .setgrpo-nav {
     backdrop-filter: none;
   }
 
-  .setgrpo-nav .research-dropdown {
-    display: none;
-  }
-
-  .setgrpo-nav .setgrpo-research.is-open .research-dropdown {
-    display: block;
-    position: fixed;
-    top: 3rem;
-    left: 0.75rem;
-    right: 0.75rem;
-    width: auto;
-    max-height: 68vh;
-    border-radius: 0 0 12px 12px;
-    border-top: 1px solid #ececf2;
-  }
-
-  .setgrpo-nav .setgrpo-research.is-open .navbar-link::after {
-    transform: rotate(180deg);
+  /* the bar is two rows tall here, so anchors need a taller offset */
+  section[id],
+  a[id="top"] {
+    scroll-margin-top: 6rem;
   }
 
   .setgrpo-nav .container {
     min-width: 0;
   }
 
+  /* Bulma turns the menu into a stacked list below 1024px; keep it as a row
+     that wraps instead, so the bar stays short and every item stays reachable */
   .setgrpo-nav .navbar-menu {
     min-width: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
+    padding: 0;
+    overflow: visible;
   }
 
-  .setgrpo-nav .navbar-menu::-webkit-scrollbar {
+  .setgrpo-nav .navbar-start {
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  /* the dropdown opens inline under its trigger, so it does not need the
+     8px hover bridge used on desktop */
+  .setgrpo-nav .setgrpo-research::after {
     display: none;
   }
 
-  .setgrpo-nav .navbar-start,
-  .setgrpo-nav .navbar-end {
-    min-width: 0;
-    flex: 0 0 auto;
+  .setgrpo-nav .research-dropdown {
+    display: none;
+  }
+
+  .setgrpo-nav .setgrpo-research.is-open {
+    flex: 1 0 100%;
+  }
+
+  .setgrpo-nav .setgrpo-research.is-open .research-dropdown {
+    display: block;
+    position: static;
+    width: 100%;
+    max-height: 60vh;
+    margin: 0.3rem 0 0.6rem;
+    border-radius: 10px;
+    border-top: 1px solid #ececf2;
+    box-shadow: 0 10px 24px rgba(20, 20, 44, 0.12);
+  }
+
+  .setgrpo-nav .setgrpo-research.is-open .navbar-link::after {
+    transform: rotate(180deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* the bar wraps to two rows here, so anchors need a taller offset */
+  section[id],
+  a[id="top"] {
+    scroll-margin-top: 10.5rem;
   }
 
   .setgrpo-nav .navbar-item {

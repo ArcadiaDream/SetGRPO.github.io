@@ -1,26 +1,13 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
+// "More Research" dropdown: hover covers desktop, click covers touch and keyboard.
+// Plain DOM on purpose — the page carries no jQuery, so the menu works even when
+// every CDN request fails.
+(function() {
+    function initResearchMenu() {
+        var research = document.querySelector('.setgrpo-research');
+        if (!research) return;
 
-$(document).ready(function() {
-    // Check for click events on the navbar burger icon
-
-    var options = {
-			slidesToScroll: 1,
-			slidesToShow: 1,
-			loop: true,
-			infinite: true,
-			autoplay: true,
-			autoplaySpeed: 5000,
-    }
-
-		// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
-	
-    bulmaSlider.attach();
-
-    // "More Research" dropdown: hover covers desktop, click covers touch and keyboard
-    var research = document.querySelector('.setgrpo-research');
-    if (research) {
         var trigger = research.querySelector('.navbar-link');
 
         var setOpen = function(open) {
@@ -45,4 +32,9 @@ $(document).ready(function() {
         });
     }
 
-})
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initResearchMenu);
+    } else {
+        initResearchMenu();
+    }
+})();
